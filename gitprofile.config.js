@@ -38,9 +38,11 @@ const config = {
     'C',
     'Git',
     'Docker',
+    'Problem Solving',
+    'juce framework',
   ],
 
-  
+
    certifications: [
     {
       name: 'Word Processor',
@@ -52,9 +54,9 @@ const config = {
   education: [
     {
       institution: 'SungKyunKwan Univ.',
-      degree: 'bachelor',
+      degree: 'bachelor, software engineering\n Achieved/taken course : C/C++, SystemProgram, ProblemSolving, etc..',
       from: '2020',
-      to: 'Present',
+      to: 'Present(a two-year leave of absence from the military)',
     },
   ],
 
