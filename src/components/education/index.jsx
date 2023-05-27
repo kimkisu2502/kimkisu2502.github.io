@@ -22,11 +22,11 @@ const Education = ({ loading, education }) => {
         <ListItem
           key={index}
           time={skeleton({
-            width: 'w-5/12',
+            width: 'w-5/30',
             height: 'h-4',
           })}
           degree={skeleton({
-            width: 'w-6/12',
+            width: 'w-6/50',
             height: 'h-4',
             className: 'my-1.5',
           })}
