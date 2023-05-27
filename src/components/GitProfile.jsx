@@ -170,6 +170,8 @@ const GitProfile = ({ config }) => {
                         loading={loading}
                         avatarRing={!sanitizedConfig.themeConfig.hideAvatarRing}
                         resume={sanitizedConfig.resume}
+                        name={'Kisu Kim'}
+                        introduction={'Hello, I am Kisu Kim, a student of Sungkyunkwan University majoring in software. I am currently living in Suwon. And I am interested in AI, low-level programming, server interaction, etc. Recently at Aclia audio, I participate in the production of virtual instruments as the head of system construction.'}
                       />
                       <Details
                         profile={profile}
