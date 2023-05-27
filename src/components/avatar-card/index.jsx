@@ -1,12 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { fallbackImage, skeleton } from '../../helpers/utils';
 import LazyImage from '../lazy-image';
 
-const AvatarCard = ({ profile, loading, avatarRing, resume }) => {
-  const myName = 'Kisu Kim';
-  const introMessage = 'Hello, I am Kisu Kim, a student of Sungkyunkwan University majoring in software. I am currently living in Suwon. And I am interested in AI, low-level programming, server interaction, etc. Recently at Aclia audio, I participate in the production of virtual instruments as the head of system construction. ';
-
+const AvatarCard = ({ profile, loading, avatarRing, resume, name, introduction }) => {
   return (
     <div className="card shadow-lg compact bg-base-100">
       <div className="grid place-items-center py-8">
@@ -49,14 +45,14 @@ const AvatarCard = ({ profile, loading, avatarRing, resume }) => {
               skeleton({ width: 'w-48', height: 'h-8' })
             ) : (
               <span className="text-base-content opacity-70">
-                {myName}
+                {name}
               </span>
             )}
           </h5>
           <div className="mt-3 text-base-content text-opacity-60 font-mono">
             {loading || !profile
               ? skeleton({ width: 'w-48', height: 'h-5' })
-              : introMessage}
+              : introduction}
           </div>
         </div>
         {resume?.fileUrl &&
@@ -87,6 +83,8 @@ AvatarCard.propTypes = {
   resume: PropTypes.shape({
     fileUrl: PropTypes.string,
   }),
+  name: PropTypes.string.isRequired,
+  introduction: PropTypes.string.isRequired,
 };
 
 export default AvatarCard;
