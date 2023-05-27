@@ -62,12 +62,7 @@ const config = {
 
   // To hide the `My Projects` section, keep it empty.
   externalProjects: [
-    {
-      title: 'Project Name',
-      description: 'Description',
-      link: 'https://example.com',
-      imageUrl: 'https://via.placeholder.com/250x250',
-    },
+
   ],
   // Display blog posts from your medium or dev account. (Optional)
   blog: {
