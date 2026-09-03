@@ -8,6 +8,7 @@ import Details from './details';
 import Skill from './skill';
 import Experience from './experience';
 import Certification from './certification';
+import Awards from './awards';
 import Education from './education';
 import Project from './project';
 import Blog from './blog';
@@ -26,6 +27,7 @@ import PropTypes from 'prop-types';
 import '../assets/index.css';
 import { formatDistance } from 'date-fns';
 import ExternalProject from './external-project';
+import Achievement from './achievement';
 
 const bgColor = 'bg-base-300';
 
@@ -171,7 +173,7 @@ const GitProfile = ({ config }) => {
                         avatarRing={!sanitizedConfig.themeConfig.hideAvatarRing}
                         resume={sanitizedConfig.resume}
                         name={'Kisu Kim'}
-                        introduction={'Hello, I am Kisu Kim, a student of Sungkyunkwan University majoring in software. I am currently living in Suwon. And I am interested in AI, low-level programming, server interaction, etc. Recently at Aclia audio, I participate in the production of virtual instruments as the head of system construction.'}
+                        introduction={'Hello, I am Kisu Kim, an M.S. student in the System Software Lab at Sungkyunkwan University (Suwon, South Korea), advised by Prof. Jaehyun Hwang. My research focuses on high-performance Linux kernel networking, including zero-copy TCP receive and host network contention, with broader interests in RDMA, DPU architecture, and networking for AI infrastructure and MLOps systems.'}
                       />
                       <Details
                         profile={profile}
@@ -191,6 +193,10 @@ const GitProfile = ({ config }) => {
                         loading={loading}
                         education={sanitizedConfig.education}
                       />
+                      <Awards
+                        loading={loading}
+                        awards={sanitizedConfig.awards}
+                      />
                       <Certification
                         loading={loading}
                         certifications={sanitizedConfig.certifications}
@@ -199,15 +205,19 @@ const GitProfile = ({ config }) => {
                   </div>
                   <div className="lg:col-span-2 col-span-1">
                     <div className="grid grid-cols-1 gap-6">
+                      <ExternalProject
+                        loading={loading}
+                        externalProjects={sanitizedConfig.externalProjects}
+                        googleAnalytics={sanitizedConfig.googleAnalytics}
+                      />
+                      <Achievement
+                        loading={loading}
+                        achievements={sanitizedConfig.achievements}
+                      />
                       <Project
                         repo={repo}
                         loading={loading}
                         github={sanitizedConfig.github}
-                        googleAnalytics={sanitizedConfig.googleAnalytics}
-                      />
-                      <ExternalProject
-                        loading={loading}
-                        externalProjects={sanitizedConfig.externalProjects}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
                       />
                       <Blog
@@ -274,6 +284,20 @@ GitProfile.propTypes = {
         imageUrl: PropTypes.string,
       })
     ),
+    achievements: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        authors: PropTypes.string,
+        venue: PropTypes.string,
+        repo: PropTypes.string,
+        links: PropTypes.arrayOf(
+          PropTypes.shape({
+            label: PropTypes.string,
+            url: PropTypes.string,
+          })
+        ),
+      })
+    ),
     experiences: PropTypes.arrayOf(
       PropTypes.shape({
         company: PropTypes.string,
@@ -283,6 +307,14 @@ GitProfile.propTypes = {
       })
     ),
     certifications: PropTypes.arrayOf(
+      PropTypes.shape({
+        body: PropTypes.string,
+        name: PropTypes.string,
+        year: PropTypes.string,
+        link: PropTypes.string,
+      })
+    ),
+    awards: PropTypes.arrayOf(
       PropTypes.shape({
         body: PropTypes.string,
         name: PropTypes.string,

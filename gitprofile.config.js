@@ -4,14 +4,22 @@ const config = {
   github: {
     username: 'kimkisu2502', // Your GitHub org/user name. (Required)
     sortBy: 'stars', // stars | updated
-    limit: 6, // How many projects to display.
+    limit: 12, // How many projects to display.
     exclude: {
-      forks: false, // Forked projects will not be displayed if set to true.
-      projects: [], // These projects will not be displayed. example: ['my-project1', 'my-project2']
+      forks: true, // Forked projects will not be displayed if set to true.
+      projects: [
+        'assignment_week10',
+        'assignment_week8',
+        'git_advanced_1',
+        'OSSP_week4',
+        'two-sum',
+        'mypy',
+        'netsys-note',
+      ], // These projects will not be displayed. example: ['my-project1', 'my-project2']
     },
   },
   social: {
-    linkedin: '',
+    linkedin: 'kisu-kim-99624933b',
     twitter: '',
     mastodon: '',
     facebook: '',
@@ -28,41 +36,96 @@ const config = {
     email: 'kimkisu2502@g.skku.edu',
   },
   resume: {
-    fileUrl:
-      'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the `Download Resume` button.
+    fileUrl: '', // Empty fileUrl will hide the `Download Resume` button.
   },
   skills: [
-    'Python',
-    'Java',
-    'C++',
+    'Linux Kernel',
+    'Networking',
+    'Zero-Copy TCP',
+    'CPU Scheduling',
+    'RDMA',
+    'DPU Architecture',
+    'AI Infra Architecture',
+    'MLOps',
     'C',
+    'C++',
     'Git',
-    'Docker',
-    'Problem Solving',
-    'juce framework',
   ],
 
+  // Empty array will hide the experience section.
+  experiences: [],
 
-   certifications: [
+   certifications: [],
+
+  awards: [
     {
-      name: 'Word Processor',
-      body: 'Word Processor Specialist',
-      year: 'Feb 2014',
-      link: 'http://www.korcham.net/nCham/Service/Main/appl/Main.asp'
+      name: 'Magna Cum Laude',
+      body: 'Bachelor Graduation Honor, SungKyunKwan Univ.',
+      year: 'Feb 2026',
+    },
+    {
+      name: "Dean's List",
+      body: 'Sophomore Fall, SungKyunKwan Univ.',
+      year: '2023',
     },
   ],
+
+  achievements: [
+    {
+      title: 'ZeroSock: Revisiting TCP Zero-Copy Receive in Linux',
+      authors: 'Kisu Kim, Sihoon Seong, KyoungSoo Park, and Jaehyun Hwang',
+      venue: 'To appear in USENIX NSDI 2027',
+      links: [
+        { label: 'pdf', url: '' },
+        { label: 'github', url: 'https://github.com/skku-syslab/zerosock' },
+      ],
+      repo: 'skku-syslab/zerosock',
+    },
+    {
+      title: 'Toward Practical Remapping-based TCP Zero-copy Receive',
+      authors: 'Kisu Kim, Sihoon Seong, KyoungSoo Park, and Jaehyun Hwang',
+      venue: 'USENIX OSDI 2026 Poster',
+      links: [
+        {
+          label: 'link',
+          url: 'https://www.usenix.org/conference/osdi26/poster-session',
+        },
+      ],
+    },
+    {
+      title:
+        '사용자 가상주소 관리 및 페이지 재매핑을 이용한 네트워크 수신 데이터의 제로카피 전달 방법',
+      authors: 'Jaehyun Hwang, Kisu Kim, and Sihoon Seong',
+      venue:
+        'Korean Patent Application No. 10-2026-0129970 (Filed 2026-07-14, Pending)',
+      links: [],
+    },
+  ],
+
   education: [
     {
       institution: 'SungKyunKwan Univ.',
-      degree: 'bachelor, software engineering\n Achieved/taken course : C/C++, SystemProgram, ProblemSolving, etc..',
+      degree: 'M.S., Electrical and Computer Engineering — System Software Lab, advised by Prof. Jaehyun Hwang',
+      from: 'March 2026',
+      to: 'Present',
+    },
+    {
+      institution: 'SungKyunKwan Univ.',
+      degree: 'Bachelor, Computer Science and Engineering — GPA 4.12 (Major 4.11)',
       from: '2020',
-      to: 'Present(a two-year leave of absence from the military)',
+      to: 'Feb 2026',
     },
   ],
 
   // To hide the `My Projects` section, keep it empty.
   externalProjects: [
-
+    {
+      title: 'ZeroSock',
+      description:
+        "[NSDI'27] ZeroSock: Revisiting TCP Zero-Copy Receive in Linux. Research project at the System Software Lab, SungKyunKwan Univ.",
+      imageUrl: 'https://github.com/skku-syslab.png',
+      link: 'https://github.com/skku-syslab/zerosock',
+    },
   ],
   // Display blog posts from your medium or dev account. (Optional)
   blog: {

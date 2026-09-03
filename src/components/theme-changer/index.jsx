@@ -57,9 +57,9 @@ const ThemeChanger = ({ theme, setTheme, loading, themeConfig }) => {
               </div>
               <div
                 tabIndex={0}
-                className="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content max-h-96 w-52 rounded-lg bg-base-200 text-base-content"
+                className="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content max-h-40 w-32 rounded-lg bg-base-200 text-base-content"
               >
-                <ul className="p-4 menu compact">
+                <ul className="p-1 menu compact text-xs">
                   {[
                     themeConfig.defaultTheme,
                     ...themeConfig.themes.filter(
@@ -70,7 +70,9 @@ const ThemeChanger = ({ theme, setTheme, loading, themeConfig }) => {
                       {/* eslint-disable-next-line */}
                       <a
                         onClick={(e) => changeTheme(e, item)}
-                        className={`${theme === item ? 'active' : ''}`}
+                        className={`py-1 min-h-0 ${
+                          theme === item ? 'active' : ''
+                        }`}
                       >
                         <span className="opacity-60 capitalize">
                           {item === themeConfig.defaultTheme ? 'Default' : item}
