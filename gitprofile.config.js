@@ -3,7 +3,7 @@
 const config = {
   github: {
     username: 'kimkisu2502', // Your GitHub org/user name. (Required)
-    sortBy: 'updated', // stars | updated
+    sortBy: 'stars', // stars | updated
     limit: 6, // How many projects to display.
     exclude: {
       forks: false, // Forked projects will not be displayed if set to true.
