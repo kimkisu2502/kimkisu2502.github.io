@@ -111,7 +111,7 @@ const config = {
     },
     {
       institution: 'SungKyunKwan Univ.',
-      degree: 'Bachelor, Computer Science and Engineering — GPA 4.12 (Major 4.11)',
+      degree: 'Bachelor, Computer Science and Engineering — GPA 4.14 (Major 4.11)',
       from: '2020',
       to: 'Feb 2026',
     },
