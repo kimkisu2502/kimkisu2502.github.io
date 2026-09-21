@@ -44,6 +44,10 @@ export default defineConfig({
           '**/assets/diagram-*.css',
         ],
         maximumFileSizeToCacheInBytes: 500 * 1024,
+        // `?d=` only picks which diagram to render, so it must not stop
+        // /diagram.html from matching its precached entry — otherwise the
+        // navigation fallback serves index.html instead.
+        ignoreURLParametersMatching: [/^utm_/, /^fbclid$/, /^d$/],
       },
       manifest: {
         name: 'Portfolio',
