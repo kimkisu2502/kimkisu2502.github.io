@@ -55,7 +55,7 @@ const config = {
   // Empty array will hide the experience section.
   experiences: [],
 
-   certifications: [],
+  certifications: [],
 
   awards: [
     {
@@ -102,16 +102,35 @@ const config = {
     },
   ],
 
+  excalidraws: [
+    {
+      id: 'rps-ipi',
+      title: 'RPS/RFS 관계도',
+      description:
+        'How RPS/RFS steers packets across cores, and how the IPI list is built in the Linux network stack.',
+      file: '/excalidraw/rps-ipi.json',
+    },
+    {
+      id: 'func-call-stack',
+      title: '함수 콜 스택',
+      description:
+        'Call-stack walkthrough of the Linux TCP receive path, from NAPI polling down to the socket layer.',
+      file: '/excalidraw/func-call-stack.json',
+    },
+  ],
+
   education: [
     {
       institution: 'SungKyunKwan Univ.',
-      degree: 'M.S., Electrical and Computer Engineering — System Software Lab, advised by Prof. Jaehyun Hwang',
+      degree:
+        'M.S., Electrical and Computer Engineering — System Software Lab, advised by Prof. Jaehyun Hwang',
       from: 'March 2026',
       to: 'Present',
     },
     {
       institution: 'SungKyunKwan Univ.',
-      degree: 'Bachelor, Computer Science and Engineering — GPA 4.14 (Major 4.11)',
+      degree:
+        'Bachelor, Computer Science and Engineering — GPA 4.14 (Major 4.11)',
       from: '2020',
       to: 'Feb 2026',
     },

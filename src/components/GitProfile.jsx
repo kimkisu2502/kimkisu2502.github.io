@@ -28,6 +28,7 @@ import '../assets/index.css';
 import { formatDistance } from 'date-fns';
 import ExternalProject from './external-project';
 import Achievement from './achievement';
+import ExcalidrawViewer from './excalidraw-viewer';
 
 const bgColor = 'bg-base-300';
 
@@ -173,7 +174,9 @@ const GitProfile = ({ config }) => {
                         avatarRing={!sanitizedConfig.themeConfig.hideAvatarRing}
                         resume={sanitizedConfig.resume}
                         name={'Kisu Kim'}
-                        introduction={'Hello, I am Kisu Kim, an M.S. student in the System Software Lab at Sungkyunkwan University (Suwon, South Korea), advised by Prof. Jaehyun Hwang. My research focuses on high-performance Linux kernel networking, including zero-copy TCP receive and host network contention, with broader interests in RDMA, DPU architecture, and networking for AI infrastructure and MLOps systems.'}
+                        introduction={
+                          'Hello, I am Kisu Kim, an M.S. student in the System Software Lab at Sungkyunkwan University (Suwon, South Korea), advised by Prof. Jaehyun Hwang. My research focuses on high-performance Linux kernel networking, including zero-copy TCP receive and host network contention, with broader interests in RDMA, DPU architecture, and networking for AI infrastructure and MLOps systems.'
+                        }
                       />
                       <Details
                         profile={profile}
@@ -213,6 +216,10 @@ const GitProfile = ({ config }) => {
                       <Achievement
                         loading={loading}
                         achievements={sanitizedConfig.achievements}
+                      />
+                      <ExcalidrawViewer
+                        loading={loading}
+                        excalidraws={sanitizedConfig.excalidraws}
                       />
                       <Project
                         repo={repo}
@@ -296,6 +303,12 @@ GitProfile.propTypes = {
             url: PropTypes.string,
           })
         ),
+      })
+    ),
+    excalidraws: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        file: PropTypes.string.isRequired,
       })
     ),
     experiences: PropTypes.arrayOf(
